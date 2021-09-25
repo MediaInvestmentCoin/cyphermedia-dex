@@ -1,0 +1,88 @@
+---
+title: "Whitepaper: Tout ce qu'il faut savoir"
+date: '2021-09-15'
+banner: ./banner.png
+lang: 'fr'
+---
+
+# Introduction
+
+## Écosystème
+
+LamboDoge n'est pas seulement un token, c'est tout un écosystème qui repose sur 2 composantes majeurs:
+
+- **(token) LamboDoge:** Un token BEP-20, utilisé pour récompenser les fournisseurs de liquidité, stakeurs et utilisateurs.
+- **(application) LamboSwap:** Consistant en de multiple produits financiers décentralisés déployés sur la Binance Smart Chain.
+
+Les fonctionnalités de LamboSwap et LamboDoge sont interdépendantes et c'est au travers de leur combinaison que l’écosystème fait sens.
+
+*Tous les produits de LamboDoge sont 100% open source, vous pouvez trouver le code sur [github](https://github.com/lamboDoge/).*
+
+---
+
+# LDOGE / LamboDoge
+
+## Taxe
+
+La principale innovation apportée par LamboDoge est la gestion de sa taxe. LamboDoge ne taxe pas chaque transaction, mais uniquement chaque achat ou vente, ce qui permet de gérer et utiliser ses jetons très facilement et débloque une multitude de nouvelles possibilités, comme l'intégration du token à travers des protocoles de finance décentralisée.
+
+LamboDoge a aussi une façon spécifique de gérer sa taxe, dans le but de réduire l'impact sur le prix de chaque vente ou achat, nous avons développé une taxe progressive corrélée au price impact et à la nature d'une transaction. L'outil ci-dessous permet de simuler le pourcentage de la taxe ainsi que sa répartition en fonction de ces facteurs.
+
+<TaxSimulator/>
+
+*Comme vous pouvez le remarquer, la taxe augmente plus vite pour une vente qu'un achat.*
+
+## Tokenomics
+
+LamboDoge a un nombre de tokens maximum de 100,000,000,000. Ils sont distribués à travers la dead adresse, des pools de liquidité, des pools de staking,
+ainsi que sur des adresses "coffre-fort" qui seront périodiquement débloquées afin d'augmenter le rendement des pools de minage de liquidité et de staking, et permettre de développer de nouveaux produits sur LamboSwap.
+
+Ci-dessous, les détails et les pourcentages de la distribution initiale:
+
+- 40 milliards de tokens (50%) sont répartis dans 4 adresses "coffre-fort". Chaque adresse contient 10Md de tokens. Nous débloquerons une adresse par mois à partir du 19 Octobre.
+- 20 milliards de tokens (20%) ont été ajouté à la liquidité sur PancakeSwap.
+- 12 milliards de tokens (12%) seront utilisés pour payer les mineurs de liquidité.
+- 10 milliards de tokens (10%) ont été brulés sur l'adresse [vault creator](https://bscscan.com/address/0x08ec88cc52edf0fff9b7672d4c640a915a7021bb).
+- 8 milliards de tokens (8%) seront utilisés pour payer les stakeurs.
+- 6 milliards de tokens (6%) sont répartis dans 4 adresses "coffre-fort" à signature multiple. Chaque adresse contient 1.5Md de tokens. Ces tokens représentent les tokens de la team.
+- 4 milliards de tokens (4%) ont été brulés sur la [dead address](https://bscscan.com/address/0x000000000000000000000000000000000000dead).
+
+---
+
+# Finance décentralisé avec LamboSwap
+
+Les principaux produits proposés par LamboSwap sont l'interface de swapping et la plateforme de staking.
+
+## Interface de swapping
+
+La version initiale de l'interface de swapping de LamboSwap utilise le protocol de PancakeSwap. Ce qui permet d'acheter ou vendre n'importe que token BEP-20 avec de la liquidité sur PancakeSwap. Mais en comparaison avec PancakeSwap, l'interface est beaucoup plus ergonomique et compatible avec le testnet.
+
+LamboSwap permet aussi de fournir, gérer et retirer de la liquidité.
+
+## Staking et minage de liquidité
+
+Un de nos but est de conserver le prix assez haut et de réduire la volatilité de LamboDoge. Pour ce faire, nous avons développé une plateforme de staking sur LamboSwap.
+
+Le principe du staking est relativement simple, Vous déposez des tokens dans une pool et vous êtes récompensés par d'autres tokens jusqu'à ce que vous retiriez votre dépôt.
+
+Au lancement, LamboSwap propose 2 pools de staking, une "pool classique" et une "pool de minage de liquidité". Définissons ces concepts et expliquons en quoi cela nous aidera à atteindre l’objectif défini plus haut.
+
+## Staking classique
+
+La "pool classique" disponible sur LamboSwap permet de staker ses `LDOGE`, récompense en `LDOGE`, et une taxe est appliquée à chaque dépôt ou retrait dans la pool. Cette taxe est intégralement ajouté aux récompenses de la pool de staking.
+
+- 2% lors d'un dépôt
+- 4% lors d'un retrait
+
+Le but de cette pool est d'inciter les détenteurs de `LDOGE` à ne pas vendre leurs tokens. À cause de la taxe décrite ci-dessus, une fois qu'un utilisateur stake ses `LDOGE`, il devra attendre quelques jours avant de pouvoir toucher un retour sur investissement, ce mécanisme ajoute un coût psychologique supplémentaire à la vente.
+
+## Minage de liquidité
+
+
+La "pool de minage de liquidité" disponible sur LamboSwap permet de staker ses `LP-LDOGE-BNB`, et récompense en `LDOGE`
+
+Lorsqu'un utilisateur fourni de la liquidité sur une paire, il va recevoir en échange une certaine quantité de LP tokens. Ces tokens représentent sa part de la pool.
+
+Plus une paire détient de la liquidité, moins le prix sera volatile. Cependant, l'apport de liquidité peut amener à une perte de capitale à cause des [pertes non permanentes](https://academy.binance.com/fr/articles/impermanent-loss-explained). C'est là qu'entre en scène le minage de liquidité. En permettant aux fournisseurs de liquidité de staker leurs LP tokens dans des pools aux taux de rendement très élevés, afin de contrebalancer les risques de perte de capital inhérents à l'apport de liquidité.
+
+C'est pourquoi la pool de minage de liquidité `LP-LDOGE-BNB` détient 50% de tokens de récompense en plus par rapport à la pool classique `LDOGE`.

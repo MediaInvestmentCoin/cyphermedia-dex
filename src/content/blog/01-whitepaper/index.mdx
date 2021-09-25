@@ -1,0 +1,105 @@
+---
+title: "Whitepaper: All you need to know"
+date: '2021-09-15'
+banner: ./banner.png
+lang: 'en'
+---
+
+# Introduction
+
+## Ecosystem
+
+LamboDoge is not only a token, it's a whole ecosystem relying on 2 major components:
+
+- **(token) LamboDoge:** A BEP-20 token, used to reward liquidity providers, stakers and holders.
+- **(app) LamboSwap:** It consists of multiple Decentralized Finance (DeFi) products deployed on the Binance Smart Chain.
+
+LamboSwap and LamboDoge features are interdependent and it's through their combination that the ecosystem makes sense.
+
+*All LambdoDoge products are 100% open source, you can find the code on [github](https://github.com/lamboDoge/).*
+
+---
+
+# LDOGE / LamboDoge
+
+## Tax
+
+The main innovation brought by LamboDoge is its tax management. LamboDoge doesn’t take a tax on each transaction but on each buy or sell,
+which lets you manage and use your tokens in a more user friendly way, and unlock a lot of new scaling possibilities, such as intergration
+into DeFi protocols.
+
+LamboDoge also has a specific way to handle its tax, in order to reduce the price impact of each transaction,
+we've developed a progressive tax correlated to the transaction's price impact and nature.
+The tool bellow simulate the tax percentage and its repartition according to these factors.
+
+<TaxSimulator/>
+
+*As you can see, fees are higher on sale than buy.*
+
+## Tokenomics
+
+LamboDoge has a max supply of 100,000,000,000 tokens. They are distributed through the dead address, liquidity pools, staking pools and
+vaults that will be unlocked periodically to increase the reward rate of liquidity mining and staking pools,
+and develop new products on LamboSwap
+
+Here are the details and percentages about the initial distribution:
+
+- 40 billion tokens (50%) are splitted into 4 vault time locked. Each of them contains 10B tokens.
+We will unlock 1 vault monthly, starting on the 19th of October.
+- 20 billion tokens (20%) were sent to the PancakeSwap liquidity pool.
+- 12 billion tokens (12%) will be used to reward liquidity miners.
+- 10 billion tokens (10%) were burned to the [vault creator](https://bscscan.com/address/0x08ec88cc52edf0fff9b7672d4c640a915a7021bb) address.
+- 8 billion tokens (8%) will be used to reward LamboDoge stakers.
+- 6 billion tokens (6%) are splitted into 4 multisig vaults of 1.5B token each. Those tokens represent the team tokens.
+- 4 billion tokens (4%) were burned to the [dead address](https://bscscan.com/address/0x000000000000000000000000000000000000dead).
+
+---
+
+# DeFi with LamboSwap
+
+The main products provided by LamboSwap are its swapping interface, and the staking platform.
+
+## Swapping interface
+
+On its first version, the swapping interface of LamboSwap uses the PancakeSwap protocol.
+Which allows you to trade any BEP-20 tokens with liquidity on PancakeSwap. But in comparison to the PancakeSwap interface,
+LamboSwap is much more user friendly and testnet compatible.
+
+LamboSwap also allows you to provide, manage and remove liquidity.
+
+## Staking and liquidity mining
+
+One of our goals is to keep the price up and increase the price floor of LamboDoge. In order to achieve this,
+we've added a staking platform to LamboSwap.
+
+The staking principle is kinda simple, you deposit some tokens into a pool and you're rewarded with some other tokens until
+you withdraw your deposited tokens.
+
+At launch, LamboSwap offers 2 staking pools, one "classic pool", and one "liquidity mining pool". Let's break down these concepts and explain
+why it will help us to achieve our goals.
+
+## Classic staking
+
+The available "classic pool" on LamboSwap allows users to stake their `LDOGE`, rewards them with `LDOGE`,
+and a tax is applied when a user deposits or withdraw his `LDOGE`. This tax is entirely added to the staking pool, as a reward.
+
+- 2% on deposit
+- 4% on withdrawn
+
+The purpose of this pool is to incentivize `LDOGE` holders to not sell their tokens. Due to the tax described above,
+once a holder stakes his `LDOGE`, he will have to wait a few days before starting to receive his return on investment,
+this mechanism adds an additional psychological cost to the sale.
+
+## Liquidity mining
+
+The available "liquidity mining pool" on LamboSwap allows users to stake their `LP-LDOGE-BNB` tokens and rewards them with `LDOGE`.
+
+When a user provides liquidity on a pair, he will receive a certain amount of LP token in exchange. These tokens represents
+his share of the liquidity pool.
+
+The more liquidity a pair own, the more stable the price is. However, liquidity providing can leads to a loss of capital due to
+[impermanent losses](https://finematics.com/impermanent-loss-explained/). That's where liquidity mining comes on the scene.
+By allowing liquidity providers to stake their LP tokens into highly enough rewarding pools to counterbalance the risk of capital losses
+inherent to liquidity providing.
+
+That's why the liquidity mining `LP-LDOGE-BNB` pool offers 50% more rewards than the classic `LDOGE` pool.
